@@ -11,7 +11,6 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="UpDownGame" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
@@ -85,6 +84,9 @@
                                 <state key="normal" image="info.circle" catalog="system">
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="bold"/>
                                 </state>
+                                <connections>
+                                    <segue destination="gny-CM-ITi" kind="presentation" modalTransitionStyle="crossDissolve" id="ePy-KZ-0BV"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -113,17 +115,86 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="maxValueLabel" destination="Xq8-0m-Brw" id="Wb5-Sp-Skx"/>
+                        <outlet property="minValueLabel" destination="EgR-4m-5gA" id="diz-66-mzb"/>
                         <outlet property="slider" destination="r1w-Y9-Skm" id="oVg-d7-4u2"/>
+                        <outlet property="sliderValueLabel" destination="muh-JO-r24" id="GZG-Yt-JXP"/>
+                        <outlet property="tryCountLabel" destination="oey-fv-3CN" id="BxK-9W-fVu"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="28.794642857142854" y="82.608695652173921"/>
+        </scene>
+        <!--Credit View Controller-->
+        <scene sceneID="U8L-Hn-RG3">
+            <objects>
+                <viewController id="gny-CM-ITi" customClass="CreditViewController" customModule="UpDownGame" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gyb-f7-yMe">
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="C5i-sz-9jz">
+                                <rect key="frame" x="314.5" y="20" width="517.5" height="353"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <string key="text">Hello World!
+
+I'm gracemj!
+
+My Contacts:
+gracemj805@gmail.com
++82 10 8398 9020</string>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="afl-w3-nKg">
+                                <rect key="frame" x="64" y="20" width="59" height="45"/>
+                                <state key="normal" image="xmark.rectangle" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="font" scale="large">
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                    </preferredSymbolConfiguration>
+                                </state>
+                                <connections>
+                                    <action selector="touchUpDismissButton:" destination="gny-CM-ITi" eventType="touchUpInside" id="wec-dA-j56"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gracemj_symbol" translatesAutoresizingMaskIntoConstraints="NO" id="FOv-W1-SAi">
+                                <rect key="frame" x="64" y="102" width="210.5" height="210.5"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="I2M-d3-BGA"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="FOv-W1-SAi" firstAttribute="leading" secondItem="afl-w3-nKg" secondAttribute="leading" id="4zM-ui-xD1"/>
+                            <constraint firstItem="I2M-d3-BGA" firstAttribute="bottom" secondItem="C5i-sz-9jz" secondAttribute="bottom" constant="20" id="A8h-Kd-Ami"/>
+                            <constraint firstItem="C5i-sz-9jz" firstAttribute="leading" secondItem="FOv-W1-SAi" secondAttribute="trailing" constant="40" id="F9E-Jy-kNj"/>
+                            <constraint firstItem="afl-w3-nKg" firstAttribute="top" secondItem="I2M-d3-BGA" secondAttribute="top" constant="20" id="QvC-Ru-NnH"/>
+                            <constraint firstItem="afl-w3-nKg" firstAttribute="leading" secondItem="I2M-d3-BGA" secondAttribute="leading" constant="20" id="RvO-gD-ybh"/>
+                            <constraint firstItem="FOv-W1-SAi" firstAttribute="centerY" secondItem="gyb-f7-yMe" secondAttribute="centerY" id="hqL-oK-0rv"/>
+                            <constraint firstItem="I2M-d3-BGA" firstAttribute="trailing" secondItem="C5i-sz-9jz" secondAttribute="trailing" constant="20" id="nbK-cL-Igv"/>
+                            <constraint firstItem="C5i-sz-9jz" firstAttribute="top" secondItem="I2M-d3-BGA" secondAttribute="top" constant="20" id="uTm-UN-2Zd"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yRZ-2S-DGG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="740.625" y="82.608695652173921"/>
         </scene>
     </scenes>
     <resources>
         <image name="checkmark.seal.fill" catalog="system" width="128" height="128"/>
+        <image name="gracemj_symbol" width="210.5" height="210.5"/>
         <image name="info.circle" catalog="system" width="128" height="121"/>
         <image name="memories" catalog="system" width="128" height="110"/>
+        <image name="xmark.rectangle" catalog="system" width="128" height="93"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemGray2Color">
             <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
